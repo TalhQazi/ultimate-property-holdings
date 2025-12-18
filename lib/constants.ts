@@ -40,6 +40,8 @@ export const styles = {
   btn: 'inline-flex items-center justify-center rounded-2xl border border-transparent px-5 py-3 text-sm font-semibold transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2563eb] active:translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60',
   btnPrimary:
     'bg-gradient-to-b from-[#111827] to-[#0f172a] text-white shadow-[0_6px_22px_rgba(17,24,39,0.18)] hover:shadow-[0_10px_28px_rgba(17,24,39,0.25)]',
+  btnYellow:
+    'bg-yellow-500 text-black border-yellow-500 shadow-[0_6px_22px_rgba(255,193,7,0.18)] hover:bg-yellow-600 hover:shadow-[0_10px_28px_rgba(255,193,7,0.25)]',
   btnGhost:
     'border border-gray-200 bg-white text-gray-900 hover:bg-gray-100 hover:text-gray-900',
 

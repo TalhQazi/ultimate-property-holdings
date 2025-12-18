@@ -1,7 +1,8 @@
 export const PROPERTY_STATUS_OPTIONS = [
   'For Rent',
   'Coming Soon',
-  'Waitlist',
+  'Under Construction',
   'Under Renovation',
+  'Waitlist',
   'Fully Occupied',
 ];

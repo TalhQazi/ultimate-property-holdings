@@ -2,11 +2,13 @@ import { styles } from '@/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Property } from '@/lib/types';
+import { Wrench } from 'lucide-react';
 
 export default function PropertyCard({ p }:{ p: Property }){
   const visibleUnits = p.units.filter(u => !u.isHidden);
   const availableCount = visibleUnits.filter(u=>u.available).length;
   const rentLabel = p.rentFrom ? `From $${p.rentFrom.toLocaleString()}` : 'Contact for pricing';
+  const isUnderConstruction = p.status === 'Under Construction';
   return (
     <Link className={`${styles.card} overflow-hidden`} href={`/properties/${p.slug}`}>
       <div className="relative h-56 w-full">
@@ -15,9 +17,14 @@ export default function PropertyCard({ p }:{ p: Property }){
       <div className={styles.cardPad}>
         <div className="flex items-center justify-between">
           <h3 className="font-montserrat font-semibold">{p.name}</h3>
-          {p.status && (
+          {p.status && isUnderConstruction ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-700 border border-orange-200">
+              <Wrench className="h-3 w-3" />
+              Under Construction
+            </span>
+          ) : p.status ? (
             <span className="rounded-full border px-2.5 py-0.5 text-xs font-medium text-gray-700">{p.status}</span>
-          )}
+          ) : null}
         </div>
         <div className="mt-1 text-sm text-gray-600">{p.address}</div>
         <div className="mt-3 flex items-center gap-2">

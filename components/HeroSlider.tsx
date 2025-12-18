@@ -47,9 +47,9 @@ export default function HeroSlider({ images, headline, subtext }:{ images: strin
               </a>
               <a
                 href="/contact"
-                className={`${styles.btn} px-6 py-4 border-white/40! bg-white/10 text-white backdrop-blur-sm transition hover:bg-white/20`}
+                className={`${styles.btn} ${styles.btnYellow} px-6 py-4`}
               >
-                Contact Us
+                Apply Now
               </a>
             </div>
           </div>
